@@ -170,7 +170,7 @@ body {
     white-space: nowrap;
     overflow: hidden;
     z-index: 10;
-    background: url(../images/ico_sliding.png) no-repeat;
+    background: url(images/ico_sliding.png) no-repeat;
 }
 .index_focus_pre {
     left: 30px;
@@ -342,12 +342,13 @@ product_box .thumb_wrapper img {
                 bottom: 0px;
             }
 .navig ul{
+				font-family:"Flama",Helvetica,Arial,Verdana,sans-serif;
                 display: inline;
                 float: left;
                 font-size: 16px;
-                margin: 0 0 0 140px;
+                margin: 0 0 0 10%;
             }
-            .navig ul li{
+.navig ul li{
                 list-style: none outside none;             
                 padding: 0 0 0 2px;
                 display: inline;
@@ -356,16 +357,62 @@ product_box .thumb_wrapper img {
                 z-index: 9998;
                 color: #FFFFFF;
                 display: inline-block;
-                height: 16px;
-                line-height: 16px;
+                height: 20px;
+                line-height: 20px;
                 padding: 9px 10px 8px;
             }
-            ul li a:active, ul li a:link, ul li a:visited{
-                color: #FFFFFF;
+ul li a:active, ul li a:link, ul li a:visited{
+                color: #ffffff;
                 text-decoration: none;
             }
       
             ul li a:hover{
-                color: #FF0000;
+                color: #ff6300;
                 text-decoration: underline;
             }
+
+/* search box */
+#search {
+
+}
+
+#search input[type="text"] {
+    background: url("images/search-white.png") no-repeat 10px 6px #fcfcfc;
+    border: 1px solid #d1d1d1;
+    font: bold 12px Arial,Helvetica,Sans-serif;
+    color: #bebebe;
+    width: 150px;
+    padding: 6px 15px 6px 35px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    -webkit-transition: all 0.7s ease 0s;
+    -moz-transition: all 0.7s ease 0s;
+    -o-transition: all 0.7s ease 0s;
+    transition: all 0.7s ease 0s;
+    }
+
+#search input[type="text"]:focus {
+    width: 180px;
+    } 
+    
+    
+/*play button*/
+.itemsContainer { 
+   
+    position:relative
+}
+.itemsContainer:hover .play{display:block}
+.play{
+  position : absolute;
+    display:none;
+    top:30%; 
+    width:40px;
+    margin:0 auto; left:0px;
+    right:0px;
+    z-index:100
+}    
