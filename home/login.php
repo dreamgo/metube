@@ -4,6 +4,12 @@
 <!--[if IE 8 ]>    <html lang="en" class="no-js ie8 lt8"> <![endif]-->
 <!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<?php
+	session_name("Global");
+	session_start();
+	unset($_SESSION['valid_user']);
+?>
+
     <head>
         <meta charset="UTF-8" />
         <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  -->

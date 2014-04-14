@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS `metube`.`user` (
   `uid` INT NOT NULL,
   `uname` VARCHAR(45) NOT NULL,
   `gender` VARCHAR(45) NOT NULL,
-  `dob` DATETIME NOT NULL,
+  `dob` DATE NOT NULL,
   `createTime` DATETIME NOT NULL,
   `password` VARCHAR(45) NOT NULL,
   `email` VARCHAR(45) NULL,
