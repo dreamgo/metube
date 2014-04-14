@@ -16,6 +16,6 @@ $password = "000123";
  $password = "root";
  $database = "metube";
  $host = "localhost";
- $FileDestination = "./ApplicationsTestFile.txt";
+
  
  ?>

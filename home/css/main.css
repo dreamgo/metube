@@ -23,9 +23,6 @@ text-shadow: 0 1px 0 rgba(255,255,255,0.9);
 text-transform: uppercase;
 color: #aaa;
 	left:15%;
-
-
-
 }
 
 h3{
@@ -128,103 +125,7 @@ body {
     background-color: #fff;
 }
 
-.index_focus {
-    position: relative;
-    width: 100%;
-    height: 600px;
-    margin: 0 auto;
-    overflow: hidden;
 
-}
-.index_focus .bd li {  
-    display: none;
-    position: absolute;
-    left: 0;
-    top: 0;
-}
-.index_focus_post {
-    z-index: 10;
-}
-.index_focus .pic {
-    height: auto;
-    display: block;
-}
-.index_focus .pic:hover {
-    text-decoration: none;
-}
-.index_focus .slide_nav {
-    position: absolute;
-    left: 45%;
-    bottom:2%;
-
-}
-.index_focus .slide_nav a {
-	cursor:pointer;
-	float:left;
-    font-size:28px;
-    font-family: arial;
-    color: #fff;
-	padding:5px 10px;
-}
-.index_focus .slide_nav li:hover,.index_focus .slide_nav .on{text-decoration: none;color: #9c0;filter: alpha(opacity=80);opacity: 0.8;}
-.index_focus_pre,.index_focus_next {
-    display: none;
-    position: absolute;
-    top: 50%;
-    margin-top: -36px;
-    width: 72px;
-    height: 72px;
-    text-indent: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    z-index: 10;
-    background: url(../images/ico_sliding.png) no-repeat;
-}
-.index_focus_pre {
-    left: 30px;
-    background-position: 0 0;
-}
-.index_focus_pre:hover {
-    background-position: 0 -144px;
-}
-.index_focus_next {
-    right: 30px;
-    background-position: 0 -72px;
-}
-.index_focus_next:hover {
-    background-position: 0 -216px;
-}
-.index_focus_info {
-    position: absolute;
-    left: 10%;
-    bottom: 30%;
-    width: 800px;
-    height: 300px;
-    padding-bottom: 10px;
-    color: #fff;
-    text-decoration: none;
-    cursor: pointer;
-    font-family: "\5fae\8f6f\96c5\9ed1";
-    -moz-text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
-    -webkit-text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
-    background: url("../images/index_focus_bg.png") no-repeat;
-    _background: none;
-}
-.index_focus_info h3 {
-    font-size: 36px;
-    line-height: 70px;
-    font-family: \5fae\8f6f\96c5\9ed1, \u9ed1\u4f53, "Lucida Grande";
-	display:none;
-}
-.index_focus_info .text {
-    width: 500px;
-    line-height: 24px;
-    font-size: 14px;
-    word-wrap: break-word;
-    overflow: hidden;
-	display:none;
-}
 
 /* photo */
 
@@ -328,86 +229,6 @@ product_box .thumb_wrapper img {
 }
 
 
-/*navigation*/
-            .navig{
-
-                background: url("../images/global_nav_bg.png") repeat-x scroll 0 0 transparent;
-                height: 100px;
-
-                width: 100%;
-
-                z-index: 9998;
-
-                position: fixed;
-                left: 0px;
-            }
-.top{
-
-                top: 0px;
-
-            }
-            .bottom{
-                bottom: 0px;
-            }
-.navig ul{
-				font-family:"Flama",Helvetica,Arial,Verdana,sans-serif;
-                display: inline;
-                float: left;
-                font-size: 16px;
-                margin: 0 0 0 10%;
-            }
-.navig ul li{
-                list-style: none outside none;             
-                padding: 0 0 0 2px;
-                display: inline;
-                float: left;
-                position: relative;
-                z-index: 9998;
-                color: #FFFFFF;
-                display: inline-block;
-                height: 20px;
-                line-height: 20px;
-                padding: 9px 10px 8px;
-            }
-ul li a:active, ul li a:link, ul li a:visited{
-                color: #ffffff;
-                text-decoration: none;
-            }
-      
-            ul li a:hover{
-                color: #ff6300;
-                text-decoration: none;
-            }
-
-/* search box */
-#search {
-
-}
-
-#search input[type="text"] {
-    background: url("../images/search-white.png") no-repeat 10px 6px #fcfcfc;
-    border: 1px solid #d1d1d1;
-    font: bold 12px Arial,Helvetica,Sans-serif;
-    color: #bebebe;
-    width: 150px;
-    padding: 6px 15px 6px 35px;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    border-radius: 20px;
-    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
-    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
-    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
-    -webkit-transition: all 0.7s ease 0s;
-    -moz-transition: all 0.7s ease 0s;
-    -o-transition: all 0.7s ease 0s;
-    transition: all 0.7s ease 0s;
-    }
-
-#search input[type="text"]:focus {
-    width: 180px;
-    } 
-    
     
 /*play button*/
 .itemsContainer { 

@@ -1,0 +1,101 @@
+/*navigation*/
+.navig{
+
+                background: url("../images/global_nav_bg.png") repeat-x scroll 0 0 transparent;
+                height: 100px;
+
+                width: 100%;
+
+                z-index: 9998;
+
+                position: fixed;
+                left: 0px;
+            }
+.top{
+
+                top: 0px;
+
+            }
+            .bottom{
+                bottom: 0px;
+            }
+.navig ul{
+				font-family:"Flama",Helvetica,Arial,Verdana,sans-serif;
+                display: inline;
+                float: left;
+                font-size: 16px;
+                margin: 0 0 0 10%;
+            }
+.navig ul li{
+                list-style: none outside none;             
+                padding: 0 0 0 2px;
+                display: inline;
+                float: left;
+                position: relative;
+                z-index: 9998;
+                color: #FFFFFF;
+                display: inline-block;
+                height: 20px;
+                line-height: 20px;
+                padding: 9px 10px 8px;
+            }
+ul li a:active, ul li a:link, ul li a:visited{
+                color: #ffffff;
+                text-decoration: none;
+            }
+      
+            ul li a:hover{
+                color: #ff6300;
+                text-decoration: none;
+            }
+
+/* search box */
+#search {
+
+}
+
+#search input[type="text"] {
+    background: url("../images/search-white.png") no-repeat 10px 6px #fcfcfc;
+    border: 1px solid #d1d1d1;
+    font: bold 12px Arial,Helvetica,Sans-serif;
+    color: #bebebe;
+    width: 150px;
+    padding: 6px 15px 6px 35px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    -webkit-transition: all 0.7s ease 0s;
+    -moz-transition: all 0.7s ease 0s;
+    -o-transition: all 0.7s ease 0s;
+    transition: all 0.7s ease 0s;
+    }
+
+#search input[type="text"]:focus {
+    width: 180px;
+    } 
+    
+    
+a {
+	font-family: Papyrus, fantasy;
+    color: rgba(48,45,48,0.49);
+    text-decoration: none;
+    -webkit-transition: color .2s ease-in-out;
+    -moz-transition: color .2s ease-in-out;
+    -o-transition: color .2s ease-in-out;
+    -ms-transition: color .2s ease-in-out;
+    transition: color .2s ease-in-out;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
+    
+    
+    

@@ -31,9 +31,7 @@
                     <li>
                         <a href="./photo.php" >PHOTO</a>
                     </li>
-                    <li>
-                        <a href="#">MORE</a>
-                    </li>
+                    
                 
                 </ul>
                 <ul>
@@ -42,16 +40,19 @@
 					</form>
                 </ul>
                 
-                <ul>
-                    <li>
-                        <a href="#" target="_blank">Login</a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank">Register</a>
-                    </li>
-                    <li>
+                 <ul>
+	                 <li>
                         <a href="#" target="_blank">Upload</a>
                     </li>
+                    <li>
+                        <a href="login.php">Login</a>
+                    </li>
+                    <li>
+                    	<a href="#" target="_blank">guest</a>
+                    <li>
+                        <a href="#" target="_blank"><img width="23" height="23" src="images/picture1.jpg"></a>
+                    </li>
+                   
                    
                 </ul>
             </div>

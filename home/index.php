@@ -1,131 +1,23 @@
 <!DOCTYPE html>
 <html>
+
+<?php
+	require('html_nav.php');
+?>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>METUBE</title>
 <link href="css/main.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/jquery.SuperSlide.js"></script>
 <style>
-.hl{
+.hl1{
 	color: #8bb82a;
 	font-size: x-large;
 }
 </style>
 </head>
-
-
-
-
-<body>
-<!-- navigation -->
-
-
-            <div class="navig top">
-                <ul>
-                    <li>
-                        <a href="./index.php" ><div class="hl">HOME</div></a>
-                    </li>
-                    <li>
-                        <a href="./video.php" >VIDEO</a>
-                    </li>
-                    <li>
-                        <a href="./music.php" >MUSIC</a>
-                    </li>
-                    <li>
-                        <a href="./photo.php" >PHOTO</a>
-                    </li>
-                   
-                
-                </ul>
-                <ul>
-                	<form method="post" action="#" id="search">
-						<input name="q" type="text" size="40" placeholder="Search..." />
-					</form>
-                </ul>
-                
-                <ul>
-	                 <li>
-                        <a href="#" target="_blank">Upload</a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank">Login</a>
-                    </li>
-                    <li>
-                    	<a href="#" target="_blank">guest</a>
-                    <li>
-                        <a href="#" target="_blank"><img width="23" height="23" src="images/picture1.jpg"></a>
-                    </li>
-                   
-                   
-                </ul>
-            </div>
-
  
 <!-- Start focus picutre -->
-<div class="index_focus">
-<a href="javascript:;" class="index_focus_pre" title="pre page">preview page</a>
-<a href="javascript:;" class="index_focus_next" title="next page">next page</a>
-<div class="bd">
-<ul>
-
-<li>
-<a href="#" class="pic" target="_blank">
-<div class="index_focus_info">
-<h3>Here is title</h3>
-<p class="text">You can input some detail at here!</p>
-</div>
-<img class="pic" src="images/4.jpg" width="1600" height="600" alt=""></a>
-</li>
-
-<li>
-<a href="http://www.404code.net" class="pic" target="_blank">
-<div class="index_focus_info">
-<h3>music app!</h3>
-<p class="text"input something at here.</p>
-</div>
-<img class="pic" src="images/2.JPG" width="1600" height="600" alt="">
-</a>
-</li>
-
-<li>
-<a href="#" class="pic" target="_blank">
-<div class="index_focus_info">
-<h3>Tiger Tiger Go</h3>
-<p class="text">input something at here!</p>
-</div>
-<img class="pic" src="images/3.jpg" width="1600" height="600" alt="">
-</a>
-</li>
-
-<li>
-<a href="#" class="pic" target="_blank">
-<div class="index_focus_info">
-<h3>Here is title</h3>
-<p class="text">You can input some detail at here!</p>
-</div>
-<img class="pic" src="images/4.jpg" width="1600" height="600" alt=""></a>
-</li>
-
-<li>
-<a href="#" class="pic" target="_blank">
-<div class="index_focus_info">
-<h3>Britney Spears《Ooh La La》</h3>
-<p class="text">ha ha ha</p>
-</div>
-<img class="pic" src="images/5.jpg" width="1600" height="600" alt="">
-</a>
-</li>
-</ul>
-</div>
-<div class="slide_nav">
-<a href="javascript:;">●</a>
-<a href="javascript:;">●</a>
-<a href="javascript:;">●</a>
-<a href="javascript:;">●</a>
-<a href="javascript:;">●</a>
-</div>
-</div>
+<?php
+require('focus_index.php');
+?>
 <!-- End home page -->  
 <!-- video part -->
 <div id="templatemo_content">
