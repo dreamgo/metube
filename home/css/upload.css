@@ -1,0 +1,25 @@
+body {
+	background: #E9E9E9; 
+}
+
+h2 { 
+	text-align: center; color: #CCC; 
+}
+
+.login_label{
+  display:inline-block;
+  width:70px;
+  padding-right:10px;
+  text-align:right;
+ }
+ 
+ .input_text{
+  width:120px;
+  height:16px;
+  padding:3px;
+  border:1px solid #000;
+ }
+ 
+ input{
+  vertical-align:middle;
+ }

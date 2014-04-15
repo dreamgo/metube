@@ -10,6 +10,16 @@
 	}
 ?>
 
+<script>
+	function checkLogin(){
+		var status='<?php echo $user_name ?>';
+		if(status=="guest"){
+			self.location='login.php';
+		}
+		else
+			self.location='upload.php';
+	}
+</script>
 
 <head>
 
@@ -54,7 +64,7 @@
                 
                 <ul>
 	                 <li>
-                        <a href="upload.php">Upload</a>
+                        <a   onclick="checkLogin()" style="color:#FFFFFF;">Upload</a>
                     </li>
                     <li>
                         <a href="login.php"><?php if($user_name=="guest") echo "login";else echo "logout";?></a>
