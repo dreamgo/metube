@@ -19,10 +19,20 @@
 	}
 	
 	if(isset($_SESSION['valid_user'])){
-		echo "yyy";
-		echo $_SESSION['valid_user'];
+		$url="index.php";
+		echo "login succesful";
+		echo "<script language='javascript' type='text/javascript'>"; 
+		echo "window.location.href='$url'"; 
+		echo "</script>";
 	}
-	
+	else{
+		$url="login.php";
+		echo "login failed:";
+		echo "<script language='javascript' type='text/javascript'>"; 
+		echo "window.location.href='$url'"; 
+		echo "</script>";
+		
+	}
 	
 	function login($username,$passwd){
 		require('dbconnect.inc.php');
@@ -40,8 +50,6 @@
 
 	
 ?>
-
-<a href="index.php">sxx</a>
 
 
 

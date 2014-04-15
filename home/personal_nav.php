@@ -1,5 +1,4 @@
 
-
 <?php
 
 	session_name("Global");
@@ -28,49 +27,43 @@
 <link href="css/nav.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/jquery.SuperSlide.js"></script>
-
 </head>
-
-
-
-
 <body>
-
-
 <!-- navigation -->
 
             <div class="navig top">
                 <ul>
-                    <li>
+                	<li>
                         <a href="./index.php" ><div class="hl1">HOME</div></a>
                     </li>
                     <li>
-                        <a href="./video.php" ><div class="hl2">VIDEO</div></a>
+                        <a href="personalCenter.php"><div class="hl2">Personal Center</div></a>
+                    </li>         
+                    <li>
+                        <a href="./subscription.php" ><div class="hl3">Subscription</div> </a>
                     </li>
                     <li>
-                        <a href="./music.php" ><div class="hl3">MUSIC</div> </a>
+                        <a href="./mychannel.php" ><div class="hl4">MyChannel</div> </a>
                     </li>
-                    <li>
-                        <a href="./photo.php" ><div class="hl4">PHOTO</div> </a>
+                   <li>
+                        <a href="./myfavorite.php" ><div class="hl5">MyFavorite</div> </a>
                     </li>
-                   
                 
                 </ul>
-                <ul>
-                	<form method="post" action="#" id="search">
-						<input name="q" type="text" size="40" placeholder="Search..." />
-					</form>
-                </ul>
+                
                 
                 <ul>
 	                 <li>
                         <a   onclick="checkLogin()" style="color:#FFFFFF">upload</a>
                     </li>
                     <li>
+                    	<a href="message.php"><?php if($user_name=="guest") echo "";else echo "message";?></a>
+                    </li>
+                    <li>
                         <a href="login.php"><?php if($user_name=="guest") echo "login";else echo "logout";?></a>
                     </li>
                     <li>
-                    	<a href="personalCenter.php" target="_blank"><?php  echo $user_name; ?> 	</a>
+                    	<a href="#" target="_blank"><?php  echo $user_name; ?> 	</a>
                     <li>
                         <a href="#" target="_blank"><img width="23" height="23" src="images/picture1.jpg"></a>
                     </li>
@@ -79,6 +72,5 @@
                 </ul>
             </div>
 
- 
 
 
