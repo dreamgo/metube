@@ -5,14 +5,14 @@
 	session_start();
 	$user_name=$_SESSION['valid_user'];
 	if(!$user_name){
-		$user_name="guest";
+		$user_name="";
 	}
 ?>
 
 <script>
 	function checkLogin(){
 		var status='<?php echo $user_name ?>';
-		if(status=="guest"){
+		if(status==""){
 			self.location='login.php';
 		}
 		else
@@ -34,13 +34,13 @@
             <div class="navig top">
                 <ul>
                 	<li>
-                        <a href="./index.php" ><div class="hl1">HOME</div></a>
+                        <a href="./index.php" ><div class="hl1">MeTube</div></a>
                     </li>
                     <li>
                         <a href="personalCenter.php"><div class="hl2">Personal Center</div></a>
                     </li>         
                     <li>
-                        <a href="./subscription.php" ><div class="hl3">Subscription</div> </a>
+                        <a href="./manage.php" ><div class="hl3">Management</div> </a>
                     </li>
                     <li>
                         <a href="./mychannel.php" ><div class="hl4">MyChannel</div> </a>
@@ -57,10 +57,10 @@
                         <a   onclick="checkLogin()" style="color:#FFFFFF">upload</a>
                     </li>
                     <li>
-                    	<a href="message.php"><?php if($user_name=="guest") echo "";else echo "message";?></a>
+                    	<a href="message.php"><?php if($user_name=="") echo "";else echo "message";?></a>
                     </li>
                     <li>
-                        <a href="login.php"><?php if($user_name=="guest") echo "login";else echo "logout";?></a>
+                        <a href="login.php"><?php if($user_name=="") echo "login";else echo "logout";?></a>
                     </li>
                     <li>
                     	<a href="#" target="_blank"><?php  echo $user_name; ?> 	</a>

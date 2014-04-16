@@ -6,18 +6,27 @@
 	session_start();
 	$user_name=$_SESSION['valid_user'];
 	if(!$user_name){
-		$user_name="guest";
+		$user_name="";
 	}
 ?>
 
 <script>
 	function checkLogin(){
 		var status='<?php echo $user_name ?>';
-		if(status=="guest"){
+		if(status==""){
 			self.location='login.php';
 		}
 		else
 			self.location='upload.php';
+	}
+	
+	function checkhead(){		
+		var status='<?php echo $user_name ?>';
+		if(status==""){
+			self.location='login.php';
+		}
+		else
+			self.location='profile.php';	
 	}
 </script>
 
@@ -42,7 +51,7 @@
             <div class="navig top">
                 <ul>
                     <li>
-                        <a href="./index.php" ><div class="hl1">HOME</div></a>
+                        <a href="./index.php" ><div class="hl1">MeTube</div></a>
                     </li>
                     <li>
                         <a href="./video.php" ><div class="hl2">VIDEO</div></a>
@@ -67,12 +76,12 @@
                         <a   onclick="checkLogin()" style="color:#FFFFFF">upload</a>
                     </li>
                     <li>
-                        <a href="login.php"><?php if($user_name=="guest") echo "login";else echo "logout";?></a>
+                        <a href="login.php"><?php if($user_name=="") echo "login";else echo "logout";?></a>
                     </li>
                     <li>
                     	<a href="personalCenter.php" target="_blank"><?php  echo $user_name; ?> 	</a>
                     <li>
-                        <a href="#" target="_blank"><img width="23" height="23" src="images/picture1.jpg"></a>
+                        <a onclick="checkhead()" target="_blank"><img width="23" height="23" src="images/picture5.jpg"></a>
                     </li>
                    
                    

@@ -12,12 +12,7 @@
 }
 </style>
 </head>
- 
-<!-- Start focus picutre -->
-<?php
-require('focus_index.php');
-?>
-<!-- End home page -->  
+  
 <!-- video part -->
 <div id="templatemo_content">
 

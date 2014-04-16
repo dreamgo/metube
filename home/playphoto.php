@@ -3,14 +3,13 @@
 
 <!DOCTYPE html>
 <html>
-
 <?php
 	require('html_nav.php');
 ?>
 <head>
 
 <style>
-.hl2{
+.hl4{
 	color: #8bb82a;
 	font-size: x-large;
 }
@@ -21,14 +20,6 @@
 	<link rel="stylesheet" href="css/video_play.css" type="text/css"/>
 </head>
 
-
-
-
-
-
-
-
-
 <title>video play</title>
 
 <body>
@@ -37,8 +28,7 @@
 	<div class="video_bg">
 		<div align="center">
 		<br><br>
-		<video width="890" height="550" src="vivalavida.mp4" type="video/mp4" 
-			id="player1" poster="vivalavida.jpg" controls="controls" >
+		<img width="890" height="550" src="images/11.jpg"  />
 		</video>
 		</div>
 		
@@ -50,7 +40,7 @@
 			<br>
 			<div class="left1">
 			<img width="40" height="40" src="images/picture4.jpg">
-			<a href="mychannel.php" style="color:#ffffff;"> Bo Li</a>
+			<a href="#" style="color:#ffffff;"> Author Name</a>
 			<button type="button" class="button1">subscribe</button>	
 			</div>
 					

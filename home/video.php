@@ -14,11 +14,7 @@
 </head>
 
  
-<!-- Start focus picutre -->
-<?php
-require('focus_index.php');
-?>
-<!-- End home page -->  
+
 <!-- video part -->
 <div id="templatemo_content">
 
@@ -26,7 +22,7 @@ require('focus_index.php');
 
 	<div class="product_box margin_r40">
 		<div class="itemsContainer">
-        <div class="thumb_wrapper"><a href="#"><img src="images/templatemo_image_04.jpg" alt="image 1" /></a></div>
+        <div class="thumb_wrapper"><a href="#"><img src="images/templatemo_image_08.jpg" alt="image 1" /></a></div>
 		<div class="play"><img src="images/button_play_blue.png" /> </div>
 		</div>
         <h2>Project One</h2>
@@ -35,7 +31,7 @@ require('focus_index.php');
     
     <div class="product_box margin_r40">
     	<div class="itemsContainer">
-        <div class="thumb_wrapper"><a href="#"><img src="images/templatemo_image_03.jpg" alt="image 2" /></a></div>
+        <div class="thumb_wrapper"><a href="#"><img src="images/templatemo_image_07.jpg" alt="image 2" /></a></div>
         <div class="play"><img src="images/button_play_blue.png" /> </div>
 		</div>
         <h2>Project Two</h2>
@@ -44,7 +40,7 @@ require('focus_index.php');
     
     <div class="product_box margin_r40">
     	<div class="itemsContainer">
-        <div class="thumb_wrapper"><a href="#"><img src="images/templatemo_image_02.jpg" alt="image 3" /></a></div>
+        <div class="thumb_wrapper"><a href="#"><img src="images/templatemo_image_05.jpg" alt="image 3" /></a></div>
         <div class="play"><img src="images/button_play_blue.png" /> </div>
 		</div>
         <h2>Project Three</h2>
@@ -53,7 +49,7 @@ require('focus_index.php');
     
 	<div class="product_box">
 		<div class="itemsContainer">
-        <div class="thumb_wrapper"><a href="#"><img src="images/templatemo_image_01.jpg" alt="image 4" /></a></div>
+        <div class="thumb_wrapper"><a href="#"><img src="images/templatemo_image_06.jpg" alt="image 4" /></a></div>
         <div class="play"><img src="images/button_play_blue.png" /> </div>
 		</div>
         <h2>Project Four</h2>
@@ -73,7 +69,7 @@ require('focus_index.php');
     
     <div class="product_box margin_r40">
     	<div class="itemsContainer">
-	    <div class="thumb_wrapper"><a href="#"><img src="images/templatemo_image_06.jpg" alt="image 6" /></a></div>
+	    <div class="thumb_wrapper"><a href="#"><img src="images/templatemo_image_02.jpg" alt="image 6" /></a></div>
 	    <div class="play"><img src="images/button_play_blue.png" /> </div>
 		</div>
         <h2>Project Six</h2>
@@ -91,7 +87,7 @@ require('focus_index.php');
     
 	<div class="product_box">
 		 <div class="itemsContainer">
-         <div class="thumb_wrapper"><a href="#"><img src="images/templatemo_image_08.jpg" alt="image 8" /></a></div>
+         <div class="thumb_wrapper"><a href="#"><img src="images/templatemo_image_01.jpg" alt="image 8" /></a></div>
          <div class="play"><img src="images/button_play_blue.png" /> </div>
 		</div>
          <h2>Project Eight</h2>
