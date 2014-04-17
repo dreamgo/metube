@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html>
 
@@ -15,18 +12,10 @@
 	font-size: x-large;
 }
 </style>
-<script src="js/jquery.js"></script>
-	<script src="js/mediaelement-and-player.min.js"></script>
-	<link rel="stylesheet" href="css/mediaelementplayer.min.css" />	
+	<script src="js/jquery.js"></script>
+	<script src="http://html5.kaltura.org/js"></script>	
 	<link rel="stylesheet" href="css/video_play.css" type="text/css"/>
 </head>
-
-
-
-
-
-
-
 
 
 <title>video play</title>
@@ -180,24 +169,6 @@
 	
 	
 
-<script>
-
-$('video').mediaelementplayer({
-	success: function(media, node, player) {
-		var events = ['loadstart', 'play','pause', 'ended'];
-		
-		for (var i=0, il=events.length; i<il; i++) {
-			
-			var eventName = events[i];
-			
-			media.addEventListener(events[i], function(e) {
-				$('#output').append( $('<div>' + e.type + '</div>') );
-			});
-			
-		}
-	}
-});
-</script>
 
 </body>
 
