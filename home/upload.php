@@ -48,7 +48,6 @@ View Permission:
 <select name="viewPermission">
   <option value="0">allow everyone</option>
   <option value="1">allow friend only</option>
-  <option value="2">allow nobody</option>
 </select>
 <br>
 Rate Permission:
@@ -56,7 +55,6 @@ Rate Permission:
 <select name="ratePermission">
   <option value="0">allow everyone</option>
   <option value="1">allow friend only</option>
-  <option value="2">allow nobody</option>
 </select>
 <br>
 Comment Permission

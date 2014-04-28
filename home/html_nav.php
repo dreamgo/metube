@@ -55,22 +55,22 @@
                         <a href="./index.php" ><div class="hl1">MeTube</div></a>
                     </li>
                     <li>
-                        <a href="./sport.php" ><div class="hl2">SPORT</div></a>
+                        <a href="./sport.php?type=sports" ><div class="hl2">SPORT</div></a>
                     </li>
                     <li>
-                        <a href="./game.php" ><div class="hl3">GAME</div> </a>
+                        <a href="./sport.php?type=game" ><div class="hl3">GAME</div> </a>
                     </li>
                     <li>
-                        <a href="./music.php" ><div class="hl4">MUSIC</div> </a>
+                        <a href="./sport.php?type=music" ><div class="hl4">MUSIC</div> </a>
                     </li>
                     <li>
-                        <a href="./movie.php" ><div class="hl4">MOVIE</div> </a>
+                        <a href="./sport.php?type=movie" ><div class="hl4">MOVIE</div> </a>
                     </li>
              
                 
                 </ul>
                 <ul>
-                	<form method="post" action="search.php" id="search">
+                	<form method="get" action="search.php" id="search">
 						<input name="q" type="text" size="40" placeholder="Search..." />
 					</form>
                 </ul>
@@ -92,6 +92,6 @@
                 </ul>
             </div>
 
- 
+<body>
 
 

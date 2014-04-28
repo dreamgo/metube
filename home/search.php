@@ -11,14 +11,19 @@
 	color: #8bb82a;
 	font-size: x-large;
 }
+h3{
+	font-size: larger;
+}
 </style>
 </head>
 <body>
 <br>
 <br>
+
 <?php
 	require('conn.php');
-	$keyword=$_POST['q'];
+	$keyword=$_GET['q'];
+	$order=$_GET['order'];
 	$query="select * from tag where keywords='$keyword'";
 	$result=mysql_query($query);
 	$res=mysql_fetch_array($result);
@@ -27,7 +32,12 @@
 		echo "sorry,there is no result!";
 	}
 	else{
-		$query="select * from multimediaFiles where mid = any(select mid from keyword where tagId=$tagID)";
+		if($order==1)
+			$query="select * from multimediaFiles where mid = any(select mid from keyword where tagId=$tagID) order by uploadTime desc";
+		if($order==2)
+			$query="select * from multimediaFiles where mid = any(select mid from keyword where tagId=$tagID) order by timesofView desc";
+		else
+			$query="select * from multimediaFiles where mid = any(select mid from keyword where tagId=$tagID)";
 		$result=mysql_query($query);
 		echo "<div id=\"templatemo_content\">";
 		
@@ -54,5 +64,11 @@
 		echo "<div class=\"cleaner_h20\"></div></div>";
 			
 	}
+	echo "<a href=\"search.php?q=$keyword&order=2\"><h3 align=\"center\" >order by most view times<h3></a>";
+	
+	echo "<a href=\"search.php?q=$keyword&order=1\"><h3 align=\"center\" >order by recent upload<h3></a>";
 ?>
+
 </body>
+
+</html>

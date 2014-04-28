@@ -14,6 +14,20 @@
 .comment{
 	text-align: right;
 }
+
+#tagcloud{
+        color: #dda0dd;
+        font-family: Arial, verdana, sans-serif;
+        width:200px;
+        border: 1px solid black;
+	text-align: center;
+}
+
+#tagcloud a{
+        color: green;
+        text-decoration: none;
+        text-transform: capitalize;
+}
 </style>
 	<script src="js/jquery.js"></script>	
 	<link rel="stylesheet" href="css/video_play.css" type="text/css"/>
@@ -54,12 +68,19 @@ $('#comment').load('comment.php?mid='+$("#mid").val()+'&comment='+$("#comment_ar
 			$gradeofrate=$res['gradeofRate'];
 			$uid=$res['uploadUid'];
 			$viewPermission=$res['viewPermission'];
-			if($viewPermission==1 ){
 			
-				$conta=mysql_query("select * from contact where Uid='$uid' and contactUid='$user_id'");
-					$num=mysql_num_rows($conta);
-					if($num==0)
-						die("you have no permission");
+			$conta=mysql_query("select * from contact where Uid='$uid' and contactUid='$user_id' and contactGroup='foe'");
+			$num=mysql_num_rows($conta);
+				if($num!=0){
+					echo "<script>alert(\"you are in black list, you can view this author's page\")</script>";
+					die("you are in black list, you can not view this author's page");
+			}
+			if($viewPermission==1 && $uid!=$user_id){		
+				$conta=mysql_query("select * from contact where Uid='$uid' and contactUid='$user_id' and contactGroup='friend'");		
+				$num=mysql_num_rows($conta);
+				if($num==0)
+					die("you have no permission");
+									
 			}
 				
 			$result=mysql_query("select * from user where uid='$uid'");
@@ -116,7 +137,7 @@ $('#comment').load('comment.php?mid='+$("#mid").val()+'&comment='+$("#comment_ar
 			<div class="right1" >				
 				<button type="button" class="button1">like</button>
 				<button type="button" class="button1">Add to</button>
-				<button type="button" class="button1">download</button>
+				<button type="button" class="button1"><a href="download.php?mid=<?php echo $_GET['mid'];?>">download</a></button>
 
 			</div>
 			<div class="left2">
@@ -130,7 +151,68 @@ $('#comment').load('comment.php?mid='+$("#mid").val()+'&comment='+$("#comment_ar
 			</div>
 		</div>
 	</div>
-	
+	<!-- word cloud -->
+	<?php
+echo "<div id=\"tagcloud\">";
+/** this is our array of tags
+ * We feed this array of tags and links the tagCloud
+ * class method createTagCloud
+ */
+ $times=1;
+ $searchtag=mysql_query("select * from tag order by tagId desc");
+/* $tags = array(
+		while($getsearchtag=mysql_fetch_array($searchtag)){
+		$keyword=$getsearchtag['keywords'];
+        array('weight'  =>50-$times*$times, 'tagname' =>'$keyword', 'url'=>'search.php?q=$keyword'),
+        $times+=1;
+        if($times>6)
+        	break;
+        }
+        
+);*/
+
+ 
+/*** create a new tag cloud object ***/
+$tagCloud = new tagCloud($tags);
+
+echo $tagCloud -> displayTagCloud();
+echo "</div>";
+
+
+class tagCloud{
+
+/*** the array of tags ***/
+private $tagsArray;
+
+
+public function __construct($tags){
+ /*** set a few properties ***/
+ $this->tagsArray = $tags;
+}
+
+/**
+ *
+ * Display tag cloud
+ *
+ * @access public
+ *
+ * @return string
+ *
+ */
+public function displayTagCloud(){
+ $ret = '';
+ shuffle($this->tagsArray);
+ foreach($this->tagsArray as $tag)
+    {
+    $ret.='<a style="font-size: '.$tag['weight'].'px;" href="'.$tag['url'].'">'.$tag['tagname'].'</a>'."\n";
+    }
+ return $ret;
+}
+    
+
+} /*** end of class ***/
+
+?>
 	
 	<!-- comment part -->
 	<div class="comment_bg">
