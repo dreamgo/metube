@@ -143,43 +143,8 @@
         <p>Proin rutrum neque vitae nisi venenatis blandit in ac dui.</p>
     </div>
     
-	<div class="cleaner"></div>
     
-  	<div class="product_box margin_r40">
-  	<div class="itemsContainer">
-        <div class="thumb_wrapper"><a href="#"><img src="images/templatemo_image_05.jpg" alt="image 5" /></a></div>
-        <div class="play"><img src="images/button_play_blue.png" /> </div>
-  	</div>
-        <h2>Project Five</h2>
-        <p>Mauris dignissim vehicula sapien, in commodo.</p>
-    </div>
-    
-    <div class="product_box margin_r40">
-    <div class="itemsContainer">
-	    <div class="thumb_wrapper"><a href="#"><img src="images/templatemo_image_06.jpg" alt="image 6" /></a></div>
-	    <div class="play"><img src="images/button_play_blue.png" /> </div>
-    </div>
-        <h2>Project Six</h2>
-    	<p>Morbi ultrices congue nunc sit amet rutrum. Ut pretium diam eu.</p>
-    </div>
-    
-    <div class="product_box margin_r40">
-    <div class="itemsContainer">
-         <div class="thumb_wrapper"><a href="#"><img src="images/templatemo_image_07.jpg" alt="image 7" /></a></div>
-         <div class="play"><img src="images/button_play_blue.png" /> </div>
-    </div>
-         <h2>Project Seven</h2>
-	     <p>Duis facilisis ante sit amet libero sodales cursus vehicula urna.</p>
-    </div>
-    
-	<div class="product_box">
-	<div class="itemsContainer">
-         <div class="thumb_wrapper"><a href="#"><img src="images/templatemo_image_08.jpg" alt="image 8" /></a></div>
-         <div class="play"><img src="images/button_play_blue.png" /> </div>
-	</div>
-         <h2>Project Eight</h2>
-	     <p>Proin vitae felis in urna laoreet suscipit. Integer consequat felis.</p>
-    </div>
+  	
     
     <div class="cleaner_h20"></div>
 

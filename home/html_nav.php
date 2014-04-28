@@ -5,6 +5,7 @@
 	session_name("Global");
 	session_start();
 	$user_name=$_SESSION['valid_user'];
+	$user_id=$_SESSION['valid_uid'];
 	if(!$user_name){
 		$user_name="";
 	}
@@ -54,19 +55,22 @@
                         <a href="./index.php" ><div class="hl1">MeTube</div></a>
                     </li>
                     <li>
-                        <a href="./video.php" ><div class="hl2">VIDEO</div></a>
+                        <a href="./sport.php" ><div class="hl2">SPORT</div></a>
                     </li>
                     <li>
-                        <a href="./music.php" ><div class="hl3">MUSIC</div> </a>
+                        <a href="./game.php" ><div class="hl3">GAME</div> </a>
                     </li>
                     <li>
-                        <a href="./photo.php" ><div class="hl4">PHOTO</div> </a>
+                        <a href="./music.php" ><div class="hl4">MUSIC</div> </a>
                     </li>
-                   
+                    <li>
+                        <a href="./movie.php" ><div class="hl4">MOVIE</div> </a>
+                    </li>
+             
                 
                 </ul>
                 <ul>
-                	<form method="post" action="#" id="search">
+                	<form method="post" action="search.php" id="search">
 						<input name="q" type="text" size="40" placeholder="Search..." />
 					</form>
                 </ul>
@@ -81,7 +85,7 @@
                     <li>
                     	<a href="personalCenter.php" target="_blank"><?php  echo $user_name; ?> 	</a>
                     <li>
-                        <a onclick="checkhead()" target="_blank"><img width="23" height="23" src="images/picture5.jpg"></a>
+                        <a onclick="checkhead()" target="_blank" style="color:white">profile</a>
                     </li>
                    
                    

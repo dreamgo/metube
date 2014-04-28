@@ -1,0 +1,130 @@
+use qiuy_201401_cpsc862;
+DROP TABLE IF EXISTS `relationship`;
+CREATE TABLE `relationship` (
+  `TableName` varchar(256) NOT NULL,
+  `TableDisplayName` varchar(256) NOT NULL,
+  `ColumnName` varchar(256) NOT NULL,
+  `ColumnDisplayName` varchar(256) NOT NULL,
+  `ColumnDataType` varchar(256) NOT NULL,
+  PRIMARY KEY (`TableName`,`ColumnName`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `relationship` VALUES ('Customers', 'Customers Information', 'Country', 'Customers Country ', 'char(70)');
+INSERT INTO `relationship` VALUES ('Customers', 'Customers Information', 'CustomerID', 'Customers Customer ID ', 'char(7)');
+INSERT INTO `relationship` VALUES ('Customers', 'Customers Information', 'Fax', 'Customers Fax ', 'char(20)');
+INSERT INTO `relationship` VALUES ('Customers', 'Customers Information', 'Phone', 'Customers Phone', 'char(20)');
+INSERT INTO `relationship` VALUES ('Customers', 'Customers Information', 'PostalCode', 'Customers Postal Code ', 'char(20)');
+INSERT INTO `relationship` VALUES ('Categories', 'Product Categories', 'CategoryID', 'Categories Category ID ', 'int');
+INSERT INTO `relationship` VALUES ('Categories', 'Product Categories', 'CategoryName', 'Categories Category Name ', 'char(250)');
+INSERT INTO `relationship` VALUES ('Categories', 'Product Categories', 'Description', 'Categories Description ', 'longtext');
+INSERT INTO `relationship` VALUES ('Categories', 'Product Categories', 'Picture', 'Categories Picture ', 'char(10)');
+INSERT INTO `relationship` VALUES ('Customers', 'Customers Information', 'Address', 'Customers Address ', 'char(80)');
+INSERT INTO `relationship` VALUES ('Customers', 'Customers Information', 'City', 'Customers City ', 'char(50)');
+INSERT INTO `relationship` VALUES ('Customers', 'Customers Information', 'CompanyName', 'Customers Company Name ', 'char(90)');
+INSERT INTO `relationship` VALUES ('Customers', 'Customers Information', 'ContactName', 'Customers Contact Name ', 'char(80)');
+INSERT INTO `relationship` VALUES ('Customers', 'Customers Information', 'ContactTitle', 'Customers Contact Title', 'char(100)');
+INSERT INTO `relationship` VALUES ('Customers', 'Customers Information', 'Region', 'Customers Region ', 'char(50)');
+INSERT INTO `relationship` VALUES ('Employees', 'Employees Information', 'Address', 'Employees Address ', 'char(80)');
+INSERT INTO `relationship` VALUES ('Employees', 'Employees Information', 'BirthDate', 'Employees Birth Date', 'date');
+INSERT INTO `relationship` VALUES ('Employees', 'Employees Information', 'City', 'Employees City ', 'char(50)');
+INSERT INTO `relationship` VALUES ('Employees', 'Employees Information', 'Country', 'Employees Country ', 'char(70)');
+INSERT INTO `relationship` VALUES ('Employees', 'Employees Information', 'EmployeeID', 'Employees Employee ID', 'int');
+INSERT INTO `relationship` VALUES ('Employees', 'Employees Information', 'Extension', 'Employees Extension ', 'char(5)');
+INSERT INTO `relationship` VALUES ('Employees', 'Employees Information', 'FirstName', 'Employees First Name ', 'char(50)');
+INSERT INTO `relationship` VALUES ('Employees', 'Employees Information', 'Region', 'Employees Region ', 'char(50)');
+INSERT INTO `relationship` VALUES ('Employees', 'Employees Information', 'ReportsTo', 'Employees Reports To ', 'int');
+INSERT INTO `relationship` VALUES ('Employees', 'Employees Information', 'Title', 'Employees Title ', 'char(30)');
+INSERT INTO `relationship` VALUES ('Employees', 'Employees Information', 'TitleOfCourtesy', 'Employees Title Of Courtesy ', 'char(5)');
+INSERT INTO `relationship` VALUES ('Orders', 'Order Information', 'CustomerID', 'Orders Customer ID ', 'char(7)');
+INSERT INTO `relationship` VALUES ('Orders', 'Order Information', 'EmployeeID', 'Orders Employee ID ', 'int');
+INSERT INTO `relationship` VALUES ('Orders', 'Order Information', 'Freight', 'Orders Freight ', 'int');
+INSERT INTO `relationship` VALUES ('Orders', 'Order Information', 'OrderDate', 'Orders Order Date ', 'date');
+INSERT INTO `relationship` VALUES ('Orders', 'Order Information', 'OrderID', 'Orders Order ID ', 'int');
+INSERT INTO `relationship` VALUES ('Orders', 'Order Information', 'RequiredDate', 'Orders Required Date ', 'date');
+INSERT INTO `relationship` VALUES ('Orders', 'Order Information', 'ShipAddress', 'Orders Shippers Address ', 'char(80)');
+INSERT INTO `relationship` VALUES ('Orders', 'Order Information', 'ShipCity', 'Orders Shipper City ', 'char(50)');
+INSERT INTO `relationship` VALUES ('Employees', 'Employees Information', 'HireDate', 'Employees Hire Date ', 'date');
+INSERT INTO `relationship` VALUES ('Employees', 'Employees Information', 'HomePhone', 'Employees Home Phone ', 'char(20)');
+INSERT INTO `relationship` VALUES ('Employees', 'Employees Information', 'LastName', 'Employees Last Name ', 'char(50)');
+INSERT INTO `relationship` VALUES ('Employees', 'Employees Information', 'Notes', 'Employees Notes ', 'longtext');
+INSERT INTO `relationship` VALUES ('Employees', 'Employees Information', 'Photo', 'Employees Photo ', 'char(10)');
+INSERT INTO `relationship` VALUES ('Employees', 'Employees Information', 'PostalCode', 'Employees Postal Code ', 'char(20)');
+INSERT INTO `relationship` VALUES ('Orders', 'Order Information', 'ShipCountry', 'Orders Shippers Country ', 'char(70)');
+INSERT INTO `relationship` VALUES ('Orders', 'Order Information', 'ShipName', 'Orders Shippers Name ', 'char(70)');
+INSERT INTO `relationship` VALUES ('Orders', 'Order Information', 'ShippedDate', 'Orders Shipped Date ', 'date');
+INSERT INTO `relationship` VALUES ('Orders', 'Order Information', 'ShipperID', 'Orders Shipper ID ', 'int');
+INSERT INTO `relationship` VALUES ('Orders', 'Order Information', 'ShipPostalCode', 'Orders Shippers Postal Code ', 'char(20)');
+INSERT INTO `relationship` VALUES ('Orders', 'Order Information', 'ShipRegion', 'Orders Shippers Region ', 'char(50)');
+INSERT INTO `relationship` VALUES ('Order_Details', 'Order\'s Detail Information', 'Discount', 'Order Details Discount ', 'decimal(3,2)');
+INSERT INTO `relationship` VALUES ('Order_Details', 'Order\'s Detail Information', 'OrderID', 'Order Details Order ID ', 'int');
+INSERT INTO `relationship` VALUES ('Order_Details', 'Order\'s Detail Information', 'ProductID', 'Order Details Product ID ', 'int');
+INSERT INTO `relationship` VALUES ('Order_Details', 'Order\'s Detail Information', 'Quantity', 'Order Details Quantity ', 'int');
+INSERT INTO `relationship` VALUES ('Order_Details', 'Order\'s Detail Information', 'UnitPrice', 'Order Details Unit Price ', 'decimal(7,2)');
+INSERT INTO `relationship` VALUES ('Products', 'Product Information', 'CategoryID', 'Products Category ID ', 'int');
+INSERT INTO `relationship` VALUES ('Products', 'Product Information', 'Discontinued', 'Products Discontinued ', 'char(4)');
+INSERT INTO `relationship` VALUES ('Products', 'Product Information', 'ProductID', 'Products Product ID ', 'int');
+INSERT INTO `relationship` VALUES ('Products', 'Product Information', 'ProductName', 'Products Product Name ', 'char(50)');
+INSERT INTO `relationship` VALUES ('Products', 'Product Information', 'QuantityPerUnit', 'Products Quantity Per Unit ', 'char(40)');
+INSERT INTO `relationship` VALUES ('Products', 'Product Information', 'ReorderLevel', 'Products Reorder Level', 'int');
+INSERT INTO `relationship` VALUES ('Products', 'Product Information', 'SupplierID', 'Products Supplier ID ', 'int');
+INSERT INTO `relationship` VALUES ('Products', 'Product Information', 'UnitPrice', 'Products Unit Price ', 'decimal(5,2)');
+INSERT INTO `relationship` VALUES ('Products', 'Product Information', 'UnitsInStock', 'Products Units In Stock ', 'int');
+INSERT INTO `relationship` VALUES ('Products', 'Product Information', 'UnitsOnOrder', 'Products Units On Order ', 'int');
+INSERT INTO `relationship` VALUES ('Shippers', 'Shipper Information', 'CompanyName', 'Shippers Company Name ', 'char(50)');
+INSERT INTO `relationship` VALUES ('Shippers', 'Shipper Information', 'Phone', 'Shippers Phone ', 'char(20)');
+INSERT INTO `relationship` VALUES ('Shippers', 'Shipper Information', 'ShipperID', 'Shippers Shipper ID', 'int');
+INSERT INTO `relationship` VALUES ('Suppliers', 'Supplier Information', 'Address', 'Suppliers Address ', 'char(80)');
+INSERT INTO `relationship` VALUES ('Suppliers', 'Supplier Information', 'City', 'Suppliers City', 'char(50)');
+INSERT INTO `relationship` VALUES ('Suppliers', 'Supplier Information', 'CompanyName ', 'Suppliers Company Name ', 'char(50)');
+INSERT INTO `relationship` VALUES ('Suppliers', 'Supplier Information', 'ContactName ', 'Suppliers Contact Name  ', 'char(80)');
+INSERT INTO `relationship` VALUES ('Suppliers', 'Supplier Information', 'ContactTitle ', 'Suppliers Contact Title', 'char(100)');
+INSERT INTO `relationship` VALUES ('Suppliers', 'Supplier Information', 'Country', 'Suppliers Country ', 'char(70)');
+INSERT INTO `relationship` VALUES ('Suppliers', 'Supplier Information', 'Fax', 'Suppliers Fax ', 'char(20)');
+INSERT INTO `relationship` VALUES ('Suppliers', 'Supplier Information', 'HomePage', 'Suppliers Home Page ', 'longtext');
+INSERT INTO `relationship` VALUES ('Suppliers', 'Supplier Information', 'Phone', 'Suppliers Phone ', 'char(50)');
+INSERT INTO `relationship` VALUES ('Suppliers', 'Supplier Information', 'PostalCode', 'Suppliers Postal Code ', 'char(20)');
+INSERT INTO `relationship` VALUES ('Suppliers', 'Supplier Information', 'Region', 'Suppliers Region ', 'char(50)');
+INSERT INTO `relationship` VALUES ('Suppliers', 'Supplier Information', 'SupplierID', 'Suppliers Supplier ID ', 'int');
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+DROP TABLE IF EXISTS `join`;
+CREATE TABLE IF NOT EXISTS `join` (
+  `tableA` varchar(255) NOT NULL,
+  `tableB` varchar(255) NOT NULL,
+  `joinTables` varchar(1024) DEFAULT NULL,
+  `joinRules` varchar(1024) DEFAULT NULL,
+  PRIMARY KEY (`tableA`,`tableB`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `join` (`tableA`, `tableB`, `joinTables`, `joinRules`) VALUES
+('Categories', 'Customers', 'Products,Order_Details,Orders', 'Categories.CategoryID = Products.CategoryID,Products.ProductID = Order_Details.ProductID,Orders.OrderID = Order_Details.OrderID,Customers.CustomerID = Orders.CustomerID'),
+('Categories', 'Employees', 'Products,Order_Details,Orders', 'Categories.CategoryID = Products.CategoryID,Products.ProductID = Order_Details.ProductID,Orders.OrderID = Order_Details.OrderID,Employees.EmployeeID = Orders.EmployeeID'),
+('Categories', 'Orders', 'Products,Order_Details', 'Categories.CategoryID = Products.CategoryID,Products.ProductID = Order_Details.ProductID,Orders.OrderID = Order_Details.OrderID'),
+('Categories', 'Order_Details', 'Products', 'Categories.CategoryID = Products.CategoryID,Products.ProductID = Order_Details.ProductID'),
+('Categories', 'Products', '', 'Categories.CategoryID = Products.CategoryID'),
+('Categories', 'Shippers', 'Products,Order_Details,Orders', 'Categories.CategoryID = Products.CategoryID,Products.ProductID = Order_Details.ProductID,Orders.OrderID = Order_Details.OrderID,Shippers.ShipperID = Orders.ShipperID'),
+('Categories', 'Suppliers', 'Products', 'Categories.CategoryID = Products.CategoryID,Suppliers.SupplierID = Products.SupplierID'),
+('Customers', 'Employees', 'Orders', 'Customers.CustomerID = Orders.CustomerID,Employees.EmployeeID = Orders.EmployeeID'),
+('Customers', 'Orders', '', 'Customers.CustomerID = Orders.CustomerID'),
+('Customers', 'Order_Details', 'Orders', 'Customers.CustomerID = Orders.CustomerID,Orders.OrderID = Order_Details.OrderID'),
+('Customers', 'Products', 'Orders,Order_Details', 'Customers.CustomerID = Orders.CustomerID,Orders.OrderID = Order_Details.OrderID,Products.ProductID = Order_Details.ProductID'),
+('Customers', 'Shippers', 'Orders', 'Customers.CustomerID = Orders.CustomerID,Shippers.ShipperID = Orders.ShipperID'),
+('Customers', 'Suppliers', 'Orders,Order_Details,Products', 'Customers.CustomerID = Orders.CustomerID,Orders.OrderID = Order_Details.OrderID,Products.ProductID = Order_Details.ProductID,Suppliers.SupplierID = Products.SupplierID'),
+('Employees', 'Orders', '', 'Employees.EmployeeID = Orders.EmployeeID'),
+('Employees', 'Order_Details', 'Orders', 'Employees.EmployeeID = Orders.EmployeeID,Orders.OrderID = Order_Details.OrderID'),
+('Employees', 'Products', 'Orders,Order_Details', 'Employees.EmployeeID = Orders.EmployeeID,Orders.OrderID = Order_Details.OrderID,Products.ProductID = Order_Details.ProductID'),
+('Employees', 'Shippers', 'Orders', 'Employees.EmployeeID = Orders.EmployeeID,Shippers.ShipperID = Orders.ShipperID'),
+('Employees', 'Suppliers', 'Orders,Order_Details,Products', 'Employees.EmployeeID = Orders.EmployeeID,Orders.OrderID = Order_Details.OrderID,Products.ProductID = Order_Details.ProductID,Suppliers.SupplierID = Products.SupplierID'),
+('Orders', 'Products', 'Order_Details', 'Orders.OrderID = Order_Details.OrderID,Products.ProductID = Order_Details.ProductID'),
+('Orders', 'Shippers', '', 'Shippers.ShipperID = Orders.ShipperID'),
+('Orders', 'Suppliers', 'Order_Details,Products', 'Orders.OrderID = Order_Details.OrderID,Products.ProductID = Order_Details.ProductID,Suppliers.SupplierID = Products.SupplierID'),
+('Order_Details', 'Orders', '', 'Orders.OrderID = Order_Details.OrderID'),
+('Order_Details', 'Products', '', 'Products.ProductID = Order_Details.ProductID'),
+('Order_Details', 'Shippers', 'Orders', 'Orders.OrderID = Order_Details.OrderID,Shippers.ShipperID = Orders.ShipperID'),
+('Order_Details', 'Suppliers', 'Products', 'Products.ProductID = Order_Details.ProductID,Suppliers.SupplierID = Products.SupplierID'),
+('Products', 'Shippers', 'Order_Details,Orders', 'Products.ProductID = Order_Details.ProductID,Orders.OrderID = Order_Details.OrderID,Shippers.ShipperID = Orders.ShipperID'),
+('Products', 'Suppliers', '', 'Suppliers.SupplierID = Products.SupplierID'),
+('Shippers', 'Suppliers', 'Orders,Order_Details,Products', 'Shippers.ShipperID = Orders.ShipperID,Orders.OrderID = Order_Details.OrderID,Products.ProductID = Order_Details.ProductID,Suppliers.SupplierID = Products.SupplierID');

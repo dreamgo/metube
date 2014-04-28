@@ -29,7 +29,7 @@
 		<div align="center">
 		<br><br>
 		<img width="890" height="550" src="images/11.jpg"  />
-		</video>
+		
 		</div>
 		
 	<!-- video infomation: title + times -->

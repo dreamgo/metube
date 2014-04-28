@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{:navgoco} Demo Page</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<!-- Demo page js and css files -->
+		<link rel="stylesheet" type="text/css" href="demo.css" media="screen" />
+		<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+		<script src="highlight.pack.js"></script>
+		<script src="demo.js"></script>
+
+		<!-- Add JQuery cookie plugin (optional) -->
+		<script src="../src/jquery.cookie.js"></script>
+		<!-- Add navgoco main js and css files  -->
+		<script type="text/javascript" src="../src/jquery.navgoco.js"></script>
+		<link rel="stylesheet" type="text/css" href="../src/jquery.navgoco.css" media="screen" />
+
+<script type="text/javascript" id="demo1-javascript">
+$(document).ready(function() {
+	// Initialize navgoco with default options
+	$("#demo1").navgoco({
+		caretHtml: '',
+		accordion: false,
+		openClass: 'open',
+		save: true,
+		cookie: {
+			name: 'navgoco',
+			expires: false,
+			path: '/'
+		},
+		slide: {
+			duration: 400,
+			easing: 'swing'
+		},
+		// Add Active class to clicked menu item
+		onClickAfter: function(e, submenu) {
+			e.preventDefault();
+			$('#demo1').find('li').removeClass('active');
+			var li =  $(this).parent();
+			var lis = li.parents('li');
+			li.addClass('active');
+			lis.addClass('active');
+		},
+	});
+
+	$("#collapseAll").click(function(e) {
+		e.preventDefault();
+		$("#demo1").navgoco('toggle', false);
+	});
+
+	$("#expandAll").click(function(e) {
+		e.preventDefault();
+		$("#demo1").navgoco('toggle', true);
+	});
+});
+</script>
+<script type="text/javascript" id="demo2-javascript">
+$(document).ready(function() {
+	$("#demo2").navgoco({accordion: true});
+});
+</script>
+	</head>
+	
+	<body>
+				<ul class="tabs">
+					<li class="active"><a href="#">tab 1</a></li>
+					<li><a href="#">tab 2</a></li>
+				</ul>
+				<div class="panes">
+					<div id="demo1-html">
+<ul id="demo1" class="nav">
+	<li><a href="#">Support Library</a>
+		<ul>
+			<li><input type="checkbox">Features</li>
+			<li><input type="checkbox">Setup</li>
+		</ul>
+	</li>
+	<li><a href="#">Revisions</a>
+		<ul>
+			<li><input type="checkbox"> SDK Tools </li>
+			<li><input type="checkbox"> ADT Plugin </li>
+		</ul>
+	</li>
+</ul>
+
+
+
+<p class="external">
+	<a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+</p>
+					
+					</div>
+					<div id="demo2-html">
+<ul id="demo2" class="nav">
+	<li><a href="#">Support Library</a>
+		<ul>
+			<li><input type="checkbox">Features</li>
+			<li><input type="checkbox">Setup</li>
+		</ul>
+	</li>
+	<li><a href="#">Revisions</a>
+		<ul>
+			<li><input type="checkbox"> SDK Tools </li>
+			<li><input type="checkbox"> ADT Plugin </li>
+		</ul>
+	</li>
+</ul>
+
+
+
+<p class="external">
+	<a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+</p>
+					
+					</div>
+					
+				</div>
+	</body>				
+				
+</html>

@@ -20,6 +20,7 @@
 <form enctype="multipart/form-data" action="upload_action.php" method=post>
 <input type="hidden" name="MAX_FILE_SIZE" value="102400000">
 Upload this file: <input name="uploadfile" type="file">
+
 <br>
 select a type here:
 <br>
@@ -27,8 +28,13 @@ select a type here:
   <option value="music">music</option>
   <option value="sports">sports</option>
   <option value="games">games</option>
-  <option value="news">news</option>
   <option value="movies">movies</option>
+</select>
+<br>
+<select name="filetype">
+  <option value="audio">audio</option>
+  <option value="image">image</option>
+  <option value="video">video</option>
 </select>
 <br>
 <label>Title:</label>

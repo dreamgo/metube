@@ -8,6 +8,7 @@
 	session_name("Global");
 	session_start();
 	unset($_SESSION['valid_user']);
+	unset($_SESSION['valid_uid']);
 ?>
 
     <head>
@@ -26,7 +27,7 @@
          
             <section>				
                 <div id="container_demo" >
-                    <!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
+                   
                     <a class="hiddenanchor" id="toregister"></a>
                     <a class="hiddenanchor" id="tologin"></a>
                     <div id="wrapper">
@@ -57,11 +58,11 @@
                         </div>
 
                         <div id="register" class="animate form">
-                            <form  action="mysuperscript.php" autocomplete="on"> 
+                            <form  action="reg.php"  method="post"> 
                                 <h1> Sign up </h1> 
                                 <p> 
                                     <label for="usernamesignup" class="uname" data-icon="u">Your username</label>
-                                    <input id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="mysuperusername690" />
+                                    <input id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="username" />
                                 </p>
                                 <p> 
                                     <label for="emailsignup" class="youmail" data-icon="e" > Your email</label>
@@ -71,10 +72,7 @@
                                     <label for="passwordsignup" class="youpasswd" data-icon="p">Your password </label>
                                     <input id="passwordsignup" name="passwordsignup" required="required" type="password" placeholder="eg. admin"/>
                                 </p>
-                                <p> 
-                                    <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Please confirm your password </label>
-                                    <input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" placeholder="eg. admin"/>
-                                </p>
+                                
                                 <p class="signin button"> 
 									<input type="submit" value="Sign up"/> 
 								</p>
