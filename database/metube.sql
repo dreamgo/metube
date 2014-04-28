@@ -40,7 +40,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `metube`.`multimediaFiles` ;
 
 CREATE TABLE IF NOT EXISTS `metube`.`multimediaFiles` (
-  `mid` INT NOT NULL,
+  `mid` INT NOT NULL auto_increment,
   `mtitle` VARCHAR(45) NOT NULL,
   `mdescription` VARCHAR(45) NOT NULL,
   `uploadTime` DATETIME NOT NULL,
@@ -55,7 +55,7 @@ CREATE TABLE IF NOT EXISTS `metube`.`multimediaFiles` (
   `timesofComment` VARCHAR(45) NOT NULL,
   `filePath` VARCHAR(45) NOT NULL,
   `mtype` VARCHAR(45) NOT NULL,
-  `duration` VARCHAR(45) NOT NULL,
+  `type` VARCHAR(45) NOT NULL,
   `maxDimension` VARCHAR(45) NOT NULL,
   `others` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`mid`))
@@ -68,7 +68,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `metube`.`userViewHistory` ;
 
 CREATE TABLE IF NOT EXISTS `metube`.`userViewHistory` (
-  `uid` INT NOT NULL,
+  `uid` INT NOT NULL auto_increment,
   `mid` INT NOT NULL,
   `viewTime` DATETIME NULL,
   PRIMARY KEY (`uid`, `mid`),
@@ -213,13 +213,13 @@ CREATE TABLE IF NOT EXISTS `metube`.`comment` (
   `mid` INT NOT NULL,
   `cmContent` VARCHAR(45) NOT NULL,
   `cmTime` DATETIME NOT NULL,
-  `cmReplyId` INT NOT NULL,
+  `cmUid` INT NOT NULL,
   PRIMARY KEY (`cmId`),
-  INDEX `fkcmReplytocmId_idx` (`cmReplyId` ASC),
+  INDEX `fkcmReplytocmId_idx` (`cmId` ASC),
   INDEX `fk_idx` (`mid` ASC),
   CONSTRAINT `fkcmReplytocmId`
-    FOREIGN KEY (`cmReplyId`)
-    REFERENCES `metube`.`comment` (`cmId`)
+    FOREIGN KEY (`cmUid`)
+    REFERENCES `metube`.`user` (`uid`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fkrcmide2`

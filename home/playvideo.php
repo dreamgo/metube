@@ -11,10 +11,19 @@
 	color: #8bb82a;
 	font-size: x-large;
 }
+.comment{
+	text-align: right;
+}
 </style>
-	<script src="js/jquery.js"></script>
-	<script src="http://html5.kaltura.org/js"></script>	
+	<script src="js/jquery.js"></script>	
 	<link rel="stylesheet" href="css/video_play.css" type="text/css"/>
+
+<script type="text/javascript">
+function comment_click()
+{
+$('#comment').load('comment.php?mid='+$("#mid").val()+'&comment='+$("#comment_area").val());
+}
+</script>
 </head>
 
 
@@ -30,7 +39,7 @@
 		<?php
 			$mid=$_GET['mid'];
 			require('conn.php');
-			
+			echo "<input hidden=\"true\" id=\"mid\" value=\"".$mid."\"/>";
 			
 			mysql_query("update multimediaFiles set timesofview=(timesofview+1) where mid='$mid'") or die("+1 to view time failed.");
 			$result=mysql_query("select * from multimediaFiles where mid='$mid'") or die("query failed");
@@ -170,12 +179,23 @@
 	?>
 </div> <!-- end of templatemo_content -->
  
-  
+
   <h2 class="classify">Comment</h2>
   <div>
-	  <textarea></textarea>
+	  <textarea id="comment_area"></textarea>
   </div>
-  <input type="button" value="submit" class="submit">
+  <button class="submit" onclick="comment_click()">submit</button>
+<div id="comment">
+	<?
+	$result = mysql_query("select * from comment where mid=".$_GET['mid']." order by cmTime desc");
+	while($res=mysql_fetch_array($result))
+	{
+		$uresult = mysql_query("select uname from user where uid=".$user_id);
+		$urow = mysql_fetch_array($uresult);
+		echo $urow["uname"]." at ".$res["cmTime"]." says:"."<br>".$res["cmContent"]."<br><hr>";
+	}
+	?>
+</div>
 </div>
 			
 		</div>
