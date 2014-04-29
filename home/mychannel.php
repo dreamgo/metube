@@ -47,12 +47,54 @@ body {
 	$userid=$_GET['uid'];
 	if(!$userid)
 		$userid=$user_id;
-	$query="select * from multimediaFiles where uploadUid='$userid' order by uploadTime desc";
-	$result=mysql_query($query);
-	$num=mysql_num_rows($result);
-	if($num==0)
-		echo "<br><br>"."there is no any files you upload.";
+	$list_query="select * from playlists where createUid ='$userid'";
+	$list_result=mysql_query($list_query);
+	while($list_res=mysql_fetch_array($list_result)){
+		echo $list_res['pltitle']."  ".$list_res['pldescription']."  ".$list_res['createTime']."<br>";
+		$query="select * from playlistFiles where plid=".$list_res['plid'];
+		//echo "plid:".$list_res['plid']."<br>";
+		$result=mysql_query($query) or die("1".mysql_error());
+		
+		$num=mysql_num_rows($row);
+		if($num==0)
+			echo "<br><br>"."there is no any files you upload.<br>";
+		while($mres=mysql_fetch_array($result)){
+		//echo $list_res['plid'];
+		$query="select * from multimediaFiles where mid=".$mres['mid'];
+		$res=mysql_query($query) or die("2".mysql_error());
+		$res = mysql_fetch_array($res);
+		//echo $num;
+		
+		
+			$mid=$res['mid'];
+			$imagecover=$res['imagecover'];		
+			$description=$res['mdescription'];
+			$title=$res['mtitle'];
+	
+			echo "<div class=\"product_box margin_r40\">";
+			echo "<div class=\"itemsContainer\">";
+	        echo "<div class=\"thumb_wrapper\">";
+	        echo "<a href=\"playvideo.php?mid=$mid\">";
+	        echo "<img src=\"$imagecover\" alt=\"image 1\" />";
+	        echo "</a></div>";
+			echo "<div class=\"play\"><img src=\"images/button_play_blue.png\" /> </div></div>";
+	        echo "<h2>$title</h2>";
+	        echo "<p>$description</p>";
+	        echo "</div>";
+			
+			}
+		echo "<div class=\"cleaner_h20\"></div>";
+	}
+	echo "Default List<br>";
+	$query="select * from multimediaFiles where uploadUid=".$userid;
+	$result=mysql_query($query) or die("3".mysql_error());
+	$num=0;
 	while($res=mysql_fetch_array($result)){
+		$query="select plid from playlistFiles where mid=".$res['mid'];
+		$plResult=mysql_query($query) or die("4".mysql_error());
+		if(mysql_num_rows($plResult))
+			continue;
+		$num++;
 		$mid=$res['mid'];
 		$imagecover=$res['imagecover'];		
 		$description=$res['mdescription'];
@@ -70,6 +112,8 @@ body {
         echo "</div>";
 		
 		}
+		if($num==0)
+			echo "<br><br>"."there is no any files you upload.<br>";
 
 
 	

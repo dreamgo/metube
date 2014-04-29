@@ -29,13 +29,48 @@
         text-transform: capitalize;
 }
 </style>
-	<script src="js/jquery.js"></script>	
+	<script src="js/jquery.js"></script>
+	<script src="//code.jquery.com/jquery-1.10.2.js"></script>	
 	<link rel="stylesheet" href="css/video_play.css" type="text/css"/>
 
 <script type="text/javascript">
 function comment_click()
 {
 $('#comment').load('comment.php?mid='+$("#mid").val()+'&comment='+$("#comment_area").val());
+}
+
+function updateScore()
+{
+	var s = document.getElementById("score");
+    var o = s.options[s.selectedIndex].value;
+    $('#score_div').load('score.php?mid='+$("#mid").val()+'&score='+o);
+}
+
+function showPlayList()
+{
+	$("#playlist").toggle();
+}
+
+
+function updatePlayList()
+{
+	var s = document.getElementById("playlist");
+    var o = s.options[s.selectedIndex].value;
+    $('#playlist_div').load('add_playlist_result.php?mid='+$("#mid").val()+'&pl='+o);
+    $("#playlist").hide();
+}
+
+function showFavourateList()
+{
+	$("#favouratelist").toggle();
+}
+
+function updateFavourateList()
+{
+	var s = document.getElementById("favouratelist");
+    var o = s.options[s.selectedIndex].value;
+    $('#favourate_div').load('add_favourate_result.php?mid='+$("#mid").val()+'&fl='+o);
+    $("#favouratelist").hide();
 }
 </script>
 </head>
@@ -135,42 +170,85 @@ $('#comment').load('comment.php?mid='+$("#mid").val()+'&comment='+$("#comment_ar
 				?>
 				
 			</div>
-			<div class="right1" >				
-				<button type="button" class="button1">like</button>
-				<button type="button" class="button1">Add to</button>
+			<div class="right1" >			
+				<div id="playlist_div"><button type="button" class="button1" onclick="showPlayList()">+playlist</button></div>
+				<div id="favourate_div"><button type="button" class="button1" onclick="showFavourateList()">+favorite </button></div>
 				<button type="button" class="button1"><a href="download.php?mid=<?php echo $_GET['mid'];?>">download</a></button>
-
+				<br>
+				<select id="playlist" hidden="true" onchange="updatePlayList()">
+				<option>select playlist</option>
+				<?
+					$presult=mysql_query("select * from playlists where createUid=".$user_id) or die("Error".mysql_error());
+					while($prow = mysql_fetch_array($presult))
+					{
+	  	echo "<option value=\"".$prow['plid']."\">".$prow['pltitle']."</option>";
+	  	}?>
+				</select>
+				<select id="favouratelist" hidden="true" onchange="updateFavourateList()">
+				<option>select favouratelist</option>
+				<?
+					$presult=mysql_query("select * from favorateLists where createUid=".$user_id) or die("Error".mysql_error());
+					while($prow = mysql_fetch_array($presult))
+					{
+	  	echo "<option value=\"".$prow['flid']."\">".$prow['fltitle']."</option>";
+	  	}?>
+				</select>
+				
 			</div>
-			<div class="left2">
-			score <select >
+			
+			<div id="score_div" class="left2">
+			score <select id="score" onchange="updateScore()">
+				<option>select score</option>
 				<option>1</option>
 				<option>2</option>
 				<option>3</option>
 				<option>4</option>
 			</select>
-			total score:<?php echo $gradeofrate; ?>
+			
+			total score:
+			<?php 
+			$result=mysql_query("select gradeofRate,timesofRate from multimediaFiles where mid='$mid'") or die("query failed.Error:".mysql_error());
+			$row = mysql_fetch_array($result);
+			echo number_format($row['gradeofRate']/$row['timesofRate'],2);
+			?>
 			</div>
 		</div>
 	</div>
+<?
+$searchtag=mysql_query("select tagId from keyword where mid=".$mid) or die("Error".mysql_error());
+ $my_tags = array();
+ //echo mysql_num_rows($searchtag);
+ $i=0;
+ while(($trow = mysql_fetch_array($searchtag)) && $i<6)
+ {
+ 	$i++;
+ 	$kresult = mysql_query("select keywords from tag where tagId=".$trow['tagId']) or die("Error".mysql_error());
+ 	$krow = mysql_fetch_array($kresult);
+	$my_tags[] = array('weight'=>50, 'tagname' =>$krow['keywords'], 'url'=>"search.php?q='".$krow['keywords']."'");
+	}
+	
+ $searchtag=mysql_query("select distinct tagId from keyword where mid <>".$mid) or die("Error".mysql_error());
+ while(($trow = mysql_fetch_array($searchtag)) && $i<6)
+ {
+ 	$i++;
+ 	$kresult = mysql_query("select keywords from tag where tagId=".$trow['tagId']) or die("Error".mysql_error());
+ 	$krow = mysql_fetch_array($kresult);
+	$my_tags[] = array('weight'=>30, 'tagname' =>$krow['keywords'], 'url'=>"search.php?q=".$krow['keywords']."");
+		}
+?>
+
+
 	<!-- word cloud -->
 	<?php
 echo "<div id=\"tagcloud\">";
+
+
 /** this is our array of tags
  * We feed this array of tags and links the tagCloud
  * class method createTagCloud
  */
- $times=1;
- $searchtag=mysql_query("select * from tag order by tagId desc");
-/* $tags = array(
-		while($getsearchtag=mysql_fetch_array($searchtag)){
-		$keyword=$getsearchtag['keywords'];
-        array('weight'  =>50-$times*$times, 'tagname' =>'$keyword', 'url'=>'search.php?q=$keyword'),
-        $times+=1;
-        if($times>6)
-        	break;
-        }
-        
-);*/
+ $tags = $my_tags;
+ 
 
  
 /*** create a new tag cloud object ***/
@@ -273,7 +351,7 @@ public function displayTagCloud(){
 	$result = mysql_query("select * from comment where mid=".$_GET['mid']." order by cmTime desc");
 	while($res=mysql_fetch_array($result))
 	{
-		$uresult = mysql_query("select uname from user where uid=".$user_id);
+		$uresult = mysql_query("select uname from user where uid=".$res["cmUid"]);
 		$urow = mysql_fetch_array($uresult);
 		echo $urow["uname"]." at ".$res["cmTime"]." says:"."<br>".$res["cmContent"]."<br><hr>";
 	}

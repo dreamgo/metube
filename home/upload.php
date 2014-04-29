@@ -2,6 +2,7 @@
 <html>
 <?php
 	require('html_nav.php');
+	require('conn.php');
 ?>
 <head>
 <link rel="stylesheet" type="text/css" href="css/upload.css" />
@@ -42,6 +43,21 @@ select a type here:
 <br>
 <label>keywords:</label>
 <input type="text" name="keywords" maxlength="50" />
+<br>
+Play List:
+<br>
+<select name="playList">
+	<option value="0">default playlist</option>
+  <?
+	  $presult=mysql_query("select * from playlists where createUid=".$user_id) or die("Error".mysql_error());
+	  $i=1;
+	  while($prow = mysql_fetch_array($presult))
+	  {
+	  	echo "<option value=\"".$prow['plid']."\">".$prow['pltitle']."</option>";
+	  	$i++;
+	}
+  ?>
+</select><br>
 <br>
 View Permission:
 <br>

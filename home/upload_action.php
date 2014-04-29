@@ -26,6 +26,7 @@
 	$viewPermission=$_POST['viewPermission'];
 	$ratePermission=$_POST['ratePermission'];
 	$commentPermission=$_POST['commentPermission'];
+	$plid = $_POST['playList'];
 	$description=$_POST['description'];
 	if($description=='')
 		$description="no comments";
@@ -69,7 +70,9 @@
 	$row=mysql_fetch_array($result);
 	$mid=$row['mid'];
 	
-		
+	//insert playlist
+	if($plid!=0)
+		$result=mysql_query("insert into playlistFiles (plid,mid) values ($plid,$mid)") or die('select mid failed');
 	
 	$words=explode(',', $keyword);
 	for($i=0;$i<count($words);$i++){

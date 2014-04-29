@@ -39,9 +39,10 @@
 			echo "<li align=\"center\"><h4 ><a href=\"displayfl.php?flid=$id\">list name: $title</a></h4> </li>";
 			echo "<li	align=\"center\">description:$descri</li>";	
 			echo "<div align=\"center\"><input type=\"checkbox\" name=\"$id\">";
-			echo "<input type=\"submit\" value=\"delete\" align=middle></div>";
+			
 			echo "<hr>";
 		}
+		echo "<input type=\"submit\" value=\"delete\" align=middle></div>";
 		echo "<ul>";
 	?>
 	</form>
