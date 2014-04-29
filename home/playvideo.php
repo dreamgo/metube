@@ -86,6 +86,7 @@ $('#comment').load('comment.php?mid='+$("#mid").val()+'&comment='+$("#comment_ar
 			$result=mysql_query("select * from user where uid='$uid'");
 			$res=mysql_fetch_array($result);
 			$username=$res['uname'];
+			$userid=$res['uid'];
 			
 			
 			if($mtype=='video'){
@@ -110,7 +111,7 @@ $('#comment').load('comment.php?mid='+$("#mid").val()+'&comment='+$("#comment_ar
 			<br>
 			<div class="left1">
 			<img width="40" height="40" src="images/picture4.jpg">
-			<a href="mychannel.php" style="color:#ffffff;"> <?php echo $username; ?></a>
+			<a href="<?php echo "mychannel.php?uid=$userid" ?>" style="color:#ffffff;"> <?php echo $username; ?></a>
 			<button type="button" class="button1">subscribe</button>	
 			</div>
 					

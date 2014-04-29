@@ -1,30 +1,36 @@
 <!DOCTYPE html>
 <html>
-
 <?php
-	require('html_nav.php');
+	require('personal_nav.php');
 ?>
 <head>
 <link href="css/main.css" rel="stylesheet" type="text/css" />
+<link href="css/upload.css" rel="stylesheet" type="text/css" />
 <style>
 .hl1{
 	color: #8bb82a;
-	font-size: x-large;
+	font-size: large;
+}
+.hl2{
+	color: orange;
+	
 }
 </style>
 </head>
+<body>
 <br>
-
+<br>
+<h1 align="center">upload video</h1>
+<!-- video part -->
 <div id="templatemo_content">
-
+<form action="deletevideo.php" method="post">
 <?php
 	require('conn.php');
-	$type=$_GET['type'];
-	$query="select * from multimediaFiles where type='$type'";
+	$query="select * from multimediaFiles where uploadUid='$user_id' order by uploadTime desc";
 	$result=mysql_query($query);
 	$num=mysql_num_rows($result);
 	if($num==0)
-		echo "<br><br>"."there is no any files now";
+		echo "<br><br>"."there is no any files you upload.";
 	while($res=mysql_fetch_array($result)){
 		$mid=$res['mid'];
 		$imagecover=$res['imagecover'];		
@@ -35,20 +41,17 @@
 		echo "<div class=\"itemsContainer\">";
         echo "<div class=\"thumb_wrapper\">";
         echo "<a href=\"playvideo.php?mid=$mid\">";
-        echo "<img src=\"$imagecover\" alt=\"image 1\"  />";
+        echo "<img src=\"$imagecover\" alt=\"image 1\" />";
         echo "</a></div>";
 		echo "<div class=\"play\"><img src=\"images/button_play_blue.png\" /> </div></div>";
         echo "<h2>$title</h2>";
         echo "<p>$description</p>";
+        echo "<input type=\"checkbox\" name=\"$mid\">";
         echo "</div>";
-		
-		}
-
-
-	
-    
-    
+		}    
 ?>    
+<input type="submit" value="delete" align=middle>
+</form>
     
     <div class="cleaner_h20"></div>
 

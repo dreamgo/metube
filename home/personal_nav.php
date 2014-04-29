@@ -4,6 +4,7 @@
 	session_name("Global");
 	session_start();
 	$user_name=$_SESSION['valid_user'];
+	$user_id=$_SESSION['valid_uid'];
 	if(!$user_name){
 		$user_name="";
 	}

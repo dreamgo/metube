@@ -35,6 +35,12 @@
 <a href="contact.php" style="color:red">contact management</a>
 <br>
 <a href="videomanage.php" style="color:red">video management</a>
+<br>
+<a href="playlistmanage.php" style="color:red">playlist management</a>
+<br>
+<a href="favoritemanage.php" style="color:red">favoritelist management</a>
 </div>
+
+
 </body>
 </html>

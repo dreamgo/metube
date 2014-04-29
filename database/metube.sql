@@ -9,7 +9,7 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 DROP TABLE IF EXISTS `metube`.`user` ;
 
 CREATE TABLE IF NOT EXISTS `metube`.`user` (
-  `uid` INT NOT NULL,
+  `uid` INT NOT NULL auto_increment,
   `uname` VARCHAR(45) NOT NULL,
   `gender` VARCHAR(45) NOT NULL,
   `dob` DATE NOT NULL,
@@ -92,7 +92,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `metube`.`playlists` ;
 
 CREATE TABLE IF NOT EXISTS `metube`.`playlists` (
-  `plid` INT NOT NULL,
+  `plid` INT NOT NULL auto_increment,
   `pltitle` VARCHAR(45) NOT NULL,
   `pldescription` VARCHAR(45) NOT NULL,
   `createTime` DATETIME NOT NULL,
@@ -107,7 +107,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `metube`.`tag` ;
 
 CREATE TABLE IF NOT EXISTS `metube`.`tag` (
-  `tagId` INT NOT NULL,
+  `tagId` INT NOT NULL auto_increment,
   `keywords` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`tagId`))
 ENGINE = InnoDB;
@@ -209,7 +209,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `metube`.`comment` ;
 
 CREATE TABLE IF NOT EXISTS `metube`.`comment` (
-  `cmId` INT NOT NULL,
+  `cmId` INT NOT NULL auto_increment,
   `mid` INT NOT NULL,
   `cmContent` VARCHAR(45) NOT NULL,
   `cmTime` DATETIME NOT NULL,

@@ -25,6 +25,7 @@
 
 
 	<h2 class="classify"><a href="createnewfl.php">->create new favorite list<-</a></h2>
+	<form action="deletefl.php" method="post">
 	<?php
 		require('conn.php');
 		$getlist=mysql_query("select * from favorateLists where createUid='$user_id'")
@@ -37,11 +38,14 @@
 			$descri=$gettile['fldescription'];
 			echo "<li align=\"center\"><h4 ><a href=\"displayfl.php?flid=$id\">list name: $title</a></h4> </li>";
 			echo "<li	align=\"center\">description:$descri</li>";	
+			echo "<div align=\"center\"><input type=\"checkbox\" name=\"$id\">";
+			echo "<input type=\"submit\" value=\"delete\" align=middle></div>";
 			echo "<hr>";
 		}
 		echo "<ul>";
 	?>
-	
+	</form>
+</form>
 
 
 

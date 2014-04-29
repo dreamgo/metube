@@ -22,44 +22,37 @@ require('focus_index.php');
 <!-- video part -->
 <div id="templatemo_content">
 
-	<h2 class="classify"><a href="./video.php">Sport &nbsp ></a></h2>
+	<h2 class="classify"><a href="./sport.php?type=sports">Sport &nbsp ></a></h2>
 
-	<div class="product_box margin_r40">
-		<div class="itemsContainer">
-        <div class="thumb_wrapper"><a href="playvideo.php"><img src="images/templatemo_image_01.jpg" alt="image 1" /></a></div>
-		<div class="play"><img src="images/button_play_blue.png" /> </div>
-		</div>
-        <h2>Project One</h2>
-        <p>Etiam molestie massa nec nulla sagittis et luctus nulla.</p>
-    </div>
+
+<?php
+	require('conn.php');
+	$type=$_GET['type'];
+	$query="select * from multimediaFiles where type='sports' order by uploadTime limit 4 ";
+	$result=mysql_query($query);
+	$num=mysql_num_rows($result);
+	if($num==0)
+		echo "<br><br>"."there is no any files now";
+	while($res=mysql_fetch_array($result)){
+		$mid=$res['mid'];
+		$imagecover=$res['imagecover'];		
+		$description=$res['mdescription'];
+		$title=$res['mtitle'];
+
+		echo "<div class=\"product_box margin_r40\">";
+		echo "<div class=\"itemsContainer\">";
+        echo "<div class=\"thumb_wrapper\">";
+        echo "<a href=\"playvideo.php?mid=$mid\">";
+        echo "<img src=\"$imagecover\" alt=\"image 1\"  />";
+        echo "</a></div>";
+		echo "<div class=\"play\"><img src=\"images/button_play_blue.png\" /> </div></div>";
+        echo "<h2>$title</h2>";
+        echo "<p>$description</p>";
+        echo "</div>";
+		
+		}
     
-    <div class="product_box margin_r40">
-    	<div class="itemsContainer">
-        <div class="thumb_wrapper"><a href="playvideo.php"><img src="images/templatemo_image_02.jpg" alt="image 2" /></a></div>
-        <div class="play"><img src="images/button_play_blue.png" /> </div>
-		</div>
-        <h2>Project Two</h2>
-        <p>Aenean aliquam ullamcorper metus, at cursus elit sodales.</p>
-    </div>
-    
-    <div class="product_box margin_r40">
-    	<div class="itemsContainer">
-        <div class="thumb_wrapper"><a href="playvideo.php"><img src="images/templatemo_image_03.jpg" alt="image 3" /></a></div>
-        <div class="play"><img src="images/button_play_blue.png" /> </div>
-		</div>
-        <h2>Project Three</h2>
-        <p>Nam sed volutpat ipsum. Phasellus pharetra pellentesque.</p>
-    </div>
-    
-	<div class="product_box">
-		<div class="itemsContainer">
-        <div class="thumb_wrapper"><a href="playvideo.php"><img src="images/templatemo_image_04.jpg" alt="image 4" /></a></div>
-        <div class="play"><img src="images/button_play_blue.png" /> </div>
-		</div>
-        <h2>Project Four</h2>
-        <p>Proin rutrum neque vitae nisi venenatis blandit in ac dui.</p>
-    </div>
-    
+?>    
     
     <div class="cleaner_h20"></div>
 
@@ -68,44 +61,36 @@ require('focus_index.php');
 <!-- video part -->
 <div id="templatemo_content">
 
-	<h2 class="classify"><a href="./video.php">Games &nbsp ></a></h2>
+	<h2 class="classify"><a href="./sport.php?type=game">Games &nbsp ></a></h2>
 
-	<div class="product_box margin_r40">
-		<div class="itemsContainer">
-        <div class="thumb_wrapper"><a href="playvideo.php"><img src="images/templatemo_image_01.jpg" alt="image 1" /></a></div>
-		<div class="play"><img src="images/button_play_blue.png" /> </div>
-		</div>
-        <h2>Project One</h2>
-        <p>Etiam molestie massa nec nulla sagittis et luctus nulla.</p>
-    </div>
+	<?php
+	require('conn.php');
+	$type=$_GET['type'];
+	$query="select * from multimediaFiles where type='game' order by uploadTime limit 4 ";
+	$result=mysql_query($query);
+	$num=mysql_num_rows($result);
+	if($num==0)
+		echo "<br><br>"."there is no any files now";
+	while($res=mysql_fetch_array($result)){
+		$mid=$res['mid'];
+		$imagecover=$res['imagecover'];		
+		$description=$res['mdescription'];
+		$title=$res['mtitle'];
+
+		echo "<div class=\"product_box margin_r40\">";
+		echo "<div class=\"itemsContainer\">";
+        echo "<div class=\"thumb_wrapper\">";
+        echo "<a href=\"playvideo.php?mid=$mid\">";
+        echo "<img src=\"$imagecover\" alt=\"image 1\"  />";
+        echo "</a></div>";
+		echo "<div class=\"play\"><img src=\"images/button_play_blue.png\" /> </div></div>";
+        echo "<h2>$title</h2>";
+        echo "<p>$description</p>";
+        echo "</div>";
+		
+		}
     
-    <div class="product_box margin_r40">
-    	<div class="itemsContainer">
-        <div class="thumb_wrapper"><a href="playvideo.php"><img src="images/templatemo_image_02.jpg" alt="image 2" /></a></div>
-        <div class="play"><img src="images/button_play_blue.png" /> </div>
-		</div>
-        <h2>Project Two</h2>
-        <p>Aenean aliquam ullamcorper metus, at cursus elit sodales.</p>
-    </div>
-    
-    <div class="product_box margin_r40">
-    	<div class="itemsContainer">
-        <div class="thumb_wrapper"><a href="playvideo.php"><img src="images/templatemo_image_03.jpg" alt="image 3" /></a></div>
-        <div class="play"><img src="images/button_play_blue.png" /> </div>
-		</div>
-        <h2>Project Three</h2>
-        <p>Nam sed volutpat ipsum. Phasellus pharetra pellentesque.</p>
-    </div>
-    
-	<div class="product_box">
-		<div class="itemsContainer">
-        <div class="thumb_wrapper"><a href="playvideo.php"><img src="images/templatemo_image_04.jpg" alt="image 4" /></a></div>
-        <div class="play"><img src="images/button_play_blue.png" /> </div>
-		</div>
-        <h2>Project Four</h2>
-        <p>Proin rutrum neque vitae nisi venenatis blandit in ac dui.</p>
-    </div>
-    
+?>    
     
     <div class="cleaner_h20"></div>
 
@@ -113,44 +98,36 @@ require('focus_index.php');
 <!-- video part -->
 <div id="templatemo_content">
 
-	<h2 class="classify"><a href="./video.php">Movies &nbsp ></a></h2>
+	<h2 class="classify"><a href="./sport.php?type=movie">Movies &nbsp ></a></h2>
 
-	<div class="product_box margin_r40">
-		<div class="itemsContainer">
-        <div class="thumb_wrapper"><a href="playvideo.php"><img src="images/templatemo_image_01.jpg" alt="image 1" /></a></div>
-		<div class="play"><img src="images/button_play_blue.png" /> </div>
-		</div>
-        <h2>Project One</h2>
-        <p>Etiam molestie massa nec nulla sagittis et luctus nulla.</p>
-    </div>
+	<?php
+	require('conn.php');
+	$type=$_GET['type'];
+	$query="select * from multimediaFiles where type='movie' order by uploadTime limit 4 ";
+	$result=mysql_query($query);
+	$num=mysql_num_rows($result);
+	if($num==0)
+		echo "<br><br>"."there is no any files now";
+	while($res=mysql_fetch_array($result)){
+		$mid=$res['mid'];
+		$imagecover=$res['imagecover'];		
+		$description=$res['mdescription'];
+		$title=$res['mtitle'];
+
+		echo "<div class=\"product_box margin_r40\">";
+		echo "<div class=\"itemsContainer\">";
+        echo "<div class=\"thumb_wrapper\">";
+        echo "<a href=\"playvideo.php?mid=$mid\">";
+        echo "<img src=\"$imagecover\" alt=\"image 1\"  />";
+        echo "</a></div>";
+		echo "<div class=\"play\"><img src=\"images/button_play_blue.png\" /> </div></div>";
+        echo "<h2>$title</h2>";
+        echo "<p>$description</p>";
+        echo "</div>";
+		
+		}
     
-    <div class="product_box margin_r40">
-    	<div class="itemsContainer">
-        <div class="thumb_wrapper"><a href="playvideo.php"><img src="images/templatemo_image_02.jpg" alt="image 2" /></a></div>
-        <div class="play"><img src="images/button_play_blue.png" /> </div>
-		</div>
-        <h2>Project Two</h2>
-        <p>Aenean aliquam ullamcorper metus, at cursus elit sodales.</p>
-    </div>
-    
-    <div class="product_box margin_r40">
-    	<div class="itemsContainer">
-        <div class="thumb_wrapper"><a href="playvideo.php"><img src="images/templatemo_image_03.jpg" alt="image 3" /></a></div>
-        <div class="play"><img src="images/button_play_blue.png" /> </div>
-		</div>
-        <h2>Project Three</h2>
-        <p>Nam sed volutpat ipsum. Phasellus pharetra pellentesque.</p>
-    </div>
-    
-	<div class="product_box">
-		<div class="itemsContainer">
-        <div class="thumb_wrapper"><a href="playvideo.php"><img src="images/templatemo_image_04.jpg" alt="image 4" /></a></div>
-        <div class="play"><img src="images/button_play_blue.png" /> </div>
-		</div>
-        <h2>Project Four</h2>
-        <p>Proin rutrum neque vitae nisi venenatis blandit in ac dui.</p>
-    </div>
-    
+?>    
     
     <div class="cleaner_h20"></div>
 
@@ -159,44 +136,36 @@ require('focus_index.php');
 <!-- video part -->
 <div id="templatemo_content">
 
-	<h2 class="classify"><a href="./video.php">Music &nbsp ></a></h2>
+	<h2 class="classify"><a href="./sport.php?type=music">Music &nbsp ></a></h2>
 
-	<div class="product_box margin_r40">
-		<div class="itemsContainer">
-        <div class="thumb_wrapper"><a href="playvideo.php"><img src="images/templatemo_image_01.jpg" alt="image 1" /></a></div>
-		<div class="play"><img src="images/button_play_blue.png" /> </div>
-		</div>
-        <h2>Project One</h2>
-        <p>Etiam molestie massa nec nulla sagittis et luctus nulla.</p>
-    </div>
+<?php
+	require('conn.php');
+	$type=$_GET['type'];
+	$query="select * from multimediaFiles where type='music' order by uploadTime limit 4 ";
+	$result=mysql_query($query);
+	$num=mysql_num_rows($result);
+	if($num==0)
+		echo "<br><br>"."there is no any files now";
+	while($res=mysql_fetch_array($result)){
+		$mid=$res['mid'];
+		$imagecover=$res['imagecover'];		
+		$description=$res['mdescription'];
+		$title=$res['mtitle'];
+
+		echo "<div class=\"product_box margin_r40\">";
+		echo "<div class=\"itemsContainer\">";
+        echo "<div class=\"thumb_wrapper\">";
+        echo "<a href=\"playvideo.php?mid=$mid\">";
+        echo "<img src=\"$imagecover\" alt=\"image 1\"  />";
+        echo "</a></div>";
+		echo "<div class=\"play\"><img src=\"images/button_play_blue.png\" /> </div></div>";
+        echo "<h2>$title</h2>";
+        echo "<p>$description</p>";
+        echo "</div>";
+		
+		}
     
-    <div class="product_box margin_r40">
-    	<div class="itemsContainer">
-        <div class="thumb_wrapper"><a href="playvideo.php"><img src="images/templatemo_image_02.jpg" alt="image 2" /></a></div>
-        <div class="play"><img src="images/button_play_blue.png" /> </div>
-		</div>
-        <h2>Project Two</h2>
-        <p>Aenean aliquam ullamcorper metus, at cursus elit sodales.</p>
-    </div>
-    
-    <div class="product_box margin_r40">
-    	<div class="itemsContainer">
-        <div class="thumb_wrapper"><a href="playvideo.php"><img src="images/templatemo_image_03.jpg" alt="image 3" /></a></div>
-        <div class="play"><img src="images/button_play_blue.png" /> </div>
-		</div>
-        <h2>Project Three</h2>
-        <p>Nam sed volutpat ipsum. Phasellus pharetra pellentesque.</p>
-    </div>
-    
-	<div class="product_box">
-		<div class="itemsContainer">
-        <div class="thumb_wrapper"><a href="playvideo.php"><img src="images/templatemo_image_04.jpg" alt="image 4" /></a></div>
-        <div class="play"><img src="images/button_play_blue.png" /> </div>
-		</div>
-        <h2>Project Four</h2>
-        <p>Proin rutrum neque vitae nisi venenatis blandit in ac dui.</p>
-    </div>
-    
+?>    
     
     <div class="cleaner_h20"></div>
 

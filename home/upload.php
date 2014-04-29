@@ -27,8 +27,8 @@ select a type here:
 <select name="type">
   <option value="music">music</option>
   <option value="sports">sports</option>
-  <option value="games">games</option>
-  <option value="movies">movies</option>
+  <option value="game">games</option>
+  <option value="movie">movies</option>
 </select>
 <br>
 <select name="filetype">

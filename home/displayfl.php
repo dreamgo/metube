@@ -19,18 +19,20 @@
 
 <?php
 	require('conn.php');
-	$type=$_GET['type'];
-	$query="select * from multimediaFiles where type='$type'";
+	$flid=$_GET['flid'];
+	$query="select * from favavorateListFiles where flid='$flid'";
 	$result=mysql_query($query);
 	$num=mysql_num_rows($result);
 	if($num==0)
 		echo "<br><br>"."there is no any files now";
-	while($res=mysql_fetch_array($result)){
-		$mid=$res['mid'];
+	while($ress=mysql_fetch_array($result)){
+		$mid=$ress['mid'];
+		$resss=mysql_query("select * from multimediaFiles where mid=$mid")
+			or die(mysql_error());
+		$res=mysql_fetch_array($resss);
 		$imagecover=$res['imagecover'];		
 		$description=$res['mdescription'];
 		$title=$res['mtitle'];
-
 		echo "<div class=\"product_box margin_r40\">";
 		echo "<div class=\"itemsContainer\">";
         echo "<div class=\"thumb_wrapper\">";
